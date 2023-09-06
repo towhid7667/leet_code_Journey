@@ -30,6 +30,18 @@ def maxProfit(prices):
             else:
                 max_prof = max(max_prof , i - min_num)     
         return max_prof 
+    #O(n)
+def maxProfit(prices):
+        l , r = 0 , 1
+        max_prof = 0
+        while r < len(prices):
+            if prices[r] > prices[l]:
+                max_prof = max(max_prof, prices[r] - prices[l])             
+            else:
+                l = r
+            r += 1 
+
+        return max_prof
     
     
     
