@@ -27,6 +27,24 @@ def ProductsCount(nums):
     return p    
 
 print(ProductsCount([2,3,4,5]))
+
+
+def ProductsCount(nums):
+        l = len(nums)
+        k = [1] * l
+
+        pre = 1
+        for i in range(l):
+            k[i] = pre
+            pre *= nums[i]
+        post = 1
+
+        for i in range(l -1, -1 ,-1):
+            k[i] *= post
+            post *= nums[i]
+        return k 
+
+print(ProductsCount([2,3,4,5]))
             
         
     
