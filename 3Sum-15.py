@@ -1,8 +1,8 @@
+# time limit exceeded
+
 def threeSum(nums):
     g = set()
     n = len(nums)
-    if n < 3:
-        return []
     for i in range(n):
         for j in range(i + 1, n):
             for k in range(j + 1 , n):
