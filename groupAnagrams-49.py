@@ -1,3 +1,4 @@
+from collections import defaultdict
 def groupAnagrams(strs):
         m = defaultdict(list)
         for i in strs:
@@ -6,7 +7,7 @@ def groupAnagrams(strs):
                 count[ord(c) - ord("a")] += 1
             m[tuple(count)].append(i)    
             
-        return m.values()  
+        return list(m.values())
     
     
 print(groupAnagrams(["eat","tea","tan","ate","nat","bat"]))      
