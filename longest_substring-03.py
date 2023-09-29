@@ -1,3 +1,4 @@
+#didn't accept all the test
 def threeSum(s):
     h = list(s)
     l = set()
