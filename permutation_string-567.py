@@ -1,3 +1,4 @@
+# Output Limit Exceeded
 from itertools import permutations
 def checkInclusion(s1,  s2):
         permutations_list1 = list(permutations(s1))
@@ -14,25 +15,18 @@ def checkInclusion(s1,  s2):
         return False
 print(checkInclusion("ab", "eidbaooo"))  
         
-
+# Output Limit Exceeded
  
 def checkInclusion(s1,  s2):
-    input_list = list(s1)
+    unique_permutations = set()
 
-    # Initialize a set to store unique permutations
-    unique_permutations = set([''.join(input_list)])
+    def generate_permutations(prefix, remaining_str):
+        if not remaining_str:
+            unique_permutations.add(prefix)
+        for i in range(len(remaining_str)):
+            generate_permutations(prefix + remaining_str[i], remaining_str[:i] + remaining_str[i+1:])
 
-    # Loop to generate permutations
-    for i in range(len(input_list) - 1):
-        current_char = input_list[i]
-        new_permutations = set()
-
-        for perm in unique_permutations:
-            for j in range(i + 1, len(perm) + 1):
-                new_permutation = perm[:i] + perm[j-1] + current_char + perm[i:j-1] + perm[j:]
-                new_permutations.add(new_permutation)
-
-        unique_permutations = new_permutations
+    generate_permutations('', s1)
 
     
     print(unique_permutations)
