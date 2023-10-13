@@ -8,7 +8,6 @@ class Solution:
     def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
         if not subRoot: return True
         if not root: return False
-
         if self.isSameTree(root, subRoot):
             return True
         return (self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot))    
