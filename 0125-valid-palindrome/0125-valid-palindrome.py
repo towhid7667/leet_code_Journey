@@ -6,6 +6,5 @@ class Solution:
             if i.isalnum():
                 converted_string += i
         reverse_string = converted_string[::-1]
-        if reverse_string == converted_string:
-            return True
-        return False          
+        return reverse_string == converted_string
+                
