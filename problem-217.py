@@ -42,6 +42,7 @@ def containsDuplicate(nums):
     else:
         return False
  #Accepted           
+
 def containsDuplicate(nums):
     b  = set()
     for i in nums:
@@ -52,3 +53,11 @@ def containsDuplicate(nums):
     return False 
             
     
+
+#Accepted
+def containsDuplicate(self, nums: List[int]) -> bool:
+        a = set(nums)
+      
+        if sorted(list(a)) == sorted(nums):
+            return False
+        return True    
