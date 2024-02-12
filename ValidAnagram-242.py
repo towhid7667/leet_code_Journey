@@ -26,3 +26,7 @@ def valid_anagram(s, t):
     return False
 print(valid_anagram("ab", "a"))
 
+
+
+def isAnagram(self, s: str, t: str) -> bool:
+    return sorted(s) == sorted(t)
