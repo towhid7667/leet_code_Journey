@@ -31,6 +31,21 @@ def topKList(nums, k):
 print(topKList([1,1,1,2,2,3], 2))
 
 
+
+# didn't pass time limit test case
+
+def topKList(nums, k):
+    f = {}
+    for i in nums:
+        a = nums.count(i)
+        f[i] = a
+    sorted_dict = dict(sorted(f.items(), key=operator.itemgetter(1), reverse=True))
+    j = list(sorted_dict.keys())  
+    return j[:k]
+
+print(topKList([1,1,1,2,2,3], 2))
+
+
 def topKList(nums, k):
     count = {}
     freq = [[] for i in range(len(nums) + 1)]
