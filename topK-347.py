@@ -46,6 +46,22 @@ def topKList(nums, k):
 print(topKList([1,1,1,2,2,3], 2))
 
 
+
+# Accepted
+
+def topKList(nums, k):
+    f = {}
+    for i in nums:
+        if i in f:
+            f[i] += 1
+        else: f[i] = 1
+    
+    j = sorted(f, key=f.get, reverse=True)
+    return j[:k]
+
+print(topKList([1,1,1,2,2,3], 2))
+
+
 def topKList(nums, k):
     count = {}
     freq = [[] for i in range(len(nums) + 1)]
