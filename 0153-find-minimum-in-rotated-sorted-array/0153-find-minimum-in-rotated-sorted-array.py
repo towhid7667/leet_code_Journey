@@ -13,3 +13,7 @@ class Solution:
             else:
                 r = m - 1    
         return res        
+
+class Solution:
+    def findMin(self, nums: List[int]) -> int:
+        return min(nums)       
